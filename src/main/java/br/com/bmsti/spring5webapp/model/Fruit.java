@@ -19,6 +19,9 @@ public class Fruit {
     private String name;
     private String description;
 
+    @OneToOne
+    private Classification classification;
+
     @ManyToMany(mappedBy = "fruits")
     private Set<Vitamin> vitamins = new HashSet<>();
 
@@ -28,6 +31,12 @@ public class Fruit {
     public Fruit(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Fruit(String name, String description, Classification classification) {
+        this.name = name;
+        this.description = description;
+        this.classification = classification;
     }
 
 
@@ -53,6 +62,14 @@ public class Fruit {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Classification getClassification() {
+        return classification;
+    }
+
+    public void setClassification(Classification classification) {
+        this.classification = classification;
     }
 
     public Set<Vitamin> getVitamins() {
@@ -82,6 +99,7 @@ public class Fruit {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", classification=" + classification +
                 ", vitamins=" + vitamins +
                 '}';
     }
