@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog Fruits</title>
+</head>
+<body>
+<h1>Fruit list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Namedd</th>
+        <th>Description</th>
+        <th>Classification</th>
+    </tr>
+    <tr th:each="fruit : ${fruits}">
+        <td th:text="${fruit.id}">123</td>
+        <td th:text="${fruit.name}">Pineapple</td>
+        <td th:text="${fruit.description}">Pineapple is a fruit typical of tropical and subtropical countries, so it does not adapt in cold climate regions.</td>
+        <td th:text="${fruit.classification.realm}">Plantae</td>
+    </tr>
+</table>
+</body>
+</html>
