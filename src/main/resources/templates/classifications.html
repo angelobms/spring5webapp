@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog Fruits</title>
+</head>
+<body>
+<h1>Classification list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Realm</th>
+        <th>Section</th>
+        <th>Kind</th>
+        <th>Subclass</th>
+        <th>Range</th>
+        <th>Family</th>
+        <th>Subfamily</th>
+        <th>Gender</th>
+    </tr>
+    <tr th:each="classification : ${classifications}">
+        <td th:text="${classification.id}">123</td>
+        <td th:text="${classification.realm}">Plantae</td>
+        <td th:text="${classification.section}">Magnoliophyta</td>
+        <td th:text="${classification.kind}">Liliopsida</td>
+        <td th:text="${classification.subclass}">Commelinidae</td>
+        <td th:text="${classification.range}">Poales</td>
+        <td th:text="${classification.family}">Bromeliaceae</td>
+        <td th:text="${classification.subfamily}">Bromelioideae</td>
+        <td th:text="${classification.gender}">Ananas</td>
+    </tr>
+</table>
+</body>
+</html>

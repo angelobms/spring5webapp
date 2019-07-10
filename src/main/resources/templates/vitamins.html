@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog Fruits</title>
+</head>
+<body>
+<h1>Vitamin list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Name IUPAC</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="vitamin : ${vitamins}">
+        <td th:text="${vitamin.id}">123</td>
+        <td th:text="${vitamin.name}">A</td>
+        <td th:text="${vitamin.nameIUPAC}">(2,6,6-trimethylcyclohex-1-enyl)nona- 2,4,6,8-tetraen-1-ol</td>
+        <td th:text="${vitamin.description}">Vitamin A belongs to the group of fat-soluble vitamins and can be found in two sources.</td>
+    </tr>
+</table>
+</body>
+</html>
